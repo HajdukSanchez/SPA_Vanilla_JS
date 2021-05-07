@@ -4,7 +4,7 @@ const resolveRoutes = (route) => {
     let validRoute = route === '/' ? route : '/:id';
     return validRoute;
   }
-  return `/${route}`; // this is going to gave us /about
+  return `/${route}`; // this is going to gave us /about for example
 }
 
 export default resolveRoutes;

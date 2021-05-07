@@ -10,7 +10,7 @@ import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
 
 // We create a element that is going to have the routes like in Angular
-const Routes = {
+const routes = {
   '/': Home,
   '/:id': Character,
   '/contact': 'Contact', // Here beacuse we dont have a element call contact we use a litearl an this is going to gave us a error404
@@ -25,6 +25,12 @@ const router = async () => {
 
   // We add the Header with AWAIT, because we used ASYNC in the function sign.
   header.innerHTML = await Header();
+
+  let hash = getHash(); // We got the hash
+  let route = await resolveRoutes(hash); // We resolve the route that the user use
+  let render = routes[route] ? routes[route] : Error404; // This function is going to have an function so when we used it we need to use like a function
+
+  content.innerHTML = await render(); // We render the path
 }
 
 export default router;
