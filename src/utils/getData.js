@@ -5,7 +5,7 @@ const getData = async (id) => {
   const apiURL = id ? `${API}${id}` : API;
   try {
     const response = await fetch(apiURL);
-    const data = await response.json(); // Change response to a JSON data object
+    const data = await response.json(); // Change response passed to a JSON data object
     return data;
   } catch (error) {
     console.error('Fecth Error:', error);
