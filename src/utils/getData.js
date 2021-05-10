@@ -1,4 +1,4 @@
-const API = 'https://rickandmortyapi.com/api/character';
+const API = 'https://rickandmortyapi.com/api/character/';
 
 const getData = async (id) => {
   // If there is and ID, this const is going to have another URL
